@@ -34,9 +34,28 @@ class App extends Worker
      * @param $path
      * @param $callback
      */
+    public function post($path, $callback)
+    {
+        $this->routeCollector['POST'][] = [$path, $callback];
+    }
+    
+    /**
+     * @param $path
+     * @param $callback
+     */
     public function get($path, $callback)
     {
         $this->routeCollector['GET'][] = [$path, $callback];
+    }
+
+    /**
+     * @param $path
+     * @param $callback
+     */
+    public function any($path, $callback)
+    {
+        $this->routeCollector['GET'][] = [$path, $callback];
+        $this->routeCollector['POST'][] = [$path, $callback];
     }
 
     /**
@@ -90,5 +109,4 @@ class App extends Worker
             echo $e;
         }
     }
-
 }
