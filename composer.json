@@ -6,8 +6,8 @@
   "license": "MIT",
   "authors": [
   {
-    "name": "Carlos Montalvo",
-  },
+    "name": "Carlos Montalvo"
+  }],
   "require": {
     "php": ">=7.1",
     "workerman/workerman": "^4.0.4",
