@@ -1,5 +1,5 @@
 {
-  "name": "ZephiroRB/zRo",
+  "name": "zephirorb/zro",
   "type": "library",
   "description": "zRo is a PHP micro framework based on workerman helps you quickly write simple yet powerful web applications and APIs",
   "keywords": ["framework","micro","api","router"],
