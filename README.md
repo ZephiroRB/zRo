@@ -9,9 +9,9 @@ It's recommended that you use Composer to install zRo.
 index.php
 ```php
 <?php
-use zRo\App;
-
 require __DIR__ . '/vendor/autoload.php';
+
+use zRo\App;
 
 $zro = new App('http://0.0.0.0:3000');
 
@@ -19,6 +19,10 @@ $zro->count = 10; // process count
 
 $zro->any('/', function ($request) {
     return 'Hello world';
+});
+
+$zro->post('/articles/create', function ($request) {
+    return json_encode(['code'=>0 ,'message' => 'ok']);
 });
 
 $zro->get('/hello/{name}', function ($request, $name) {
