@@ -15,7 +15,8 @@ use zRo\App;
 
 $zro = new App('http://0.0.0.0:3000');
 
-$zro->count = 10; // process count
+// 10 processes
+$zro->count = 10; 
 
 $zro->any('/', function ($request) {
     return 'Hello world';
@@ -42,6 +43,28 @@ php index.php restart -d
 php index.php stop
 php index.php status
 php index.php connections
+```
+
+
+# Nginx
+
+If you would like to use Nginx as reverse proxy or load balancer for your Comet app, insert into nginx.conf these lines:
+
+```php
+http {
+ 
+    upstream app {
+        server http://localhost:port;
+    }
+  
+    server {
+        listen 80;
+         location / {
+            proxy_pass         http://app;
+            proxy_redirect     off;
+        }
+    }
+}    
 ```
 
 # License
