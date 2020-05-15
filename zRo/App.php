@@ -15,7 +15,7 @@ class App extends Worker
     protected $routeCollector = [];
 
     /**
-     * @var FastRouteDispatcher|null
+     * @var FastRoute\simpleDispatcher|null
      */
     protected $dispatcher = null;
 
